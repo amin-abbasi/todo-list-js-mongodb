@@ -1,0 +1,52 @@
+{
+  "name": "todo-list-js-mongodb",
+  "version": "2.0.0",
+  "description": "This is a to-do list project.",
+  "main": "./src/server.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "test": "jest --updateSnapshot --detectOpenHandles --coverage --forceExit --verbose",
+    "run": "pm2 start ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amin4193/todo-list-js-mongodb.git"
+  },
+  "keywords": [
+    "todo-list",
+    "boilerplate"
+  ],
+  "author": "AAH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amin4193/todo-list-js-mongodb/issues"
+  },
+  "homepage": "https://github.com/amin4193/todo-list-js-mongodb.git#readme",
+  "dependencies": {
+    "@hapi/boom": "9.1.1",
+    "celebrate": "13.0.4",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "express-winston": "4.1.0",
+    "helmet": "4.4.1",
+    "jsonwebtoken": "8.5.1",
+    "mongoose": "5.11.18",
+    "mongoose-unique-validator": "2.0.3",
+    "mysql": "2.18.1",
+    "node-fetch": "2.6.1",
+    "redis": "3.0.2",
+    "reflect-metadata": "0.1.13",
+    "socket.io": "3.1.1",
+    "swagger-jsdoc": "6.0.6",
+    "swagger-ui-express": "4.1.6",
+    "typeorm": "0.2.31",
+    "winston": "3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "7.20.0",
+    "jest": "26.6.3",
+    "lint-staged": "10.5.4",
+    "prettier": "2.2.1",
+    "supertest": "6.1.3"
+  }
+}
