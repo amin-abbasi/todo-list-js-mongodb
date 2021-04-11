@@ -9,25 +9,15 @@ import {
   Row,
   Col,
   Button,
-  Form,
-  FormGroup,
-  Label,
+  // Form,
+  // FormGroup,
+  // Label,
   Input,
   Spinner,
   InputGroup,
   InputGroupAddon,
   InputGroupText,
 } from 'reactstrap'
-
-// ListGroup.propTypes = {
-//   tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-//   // boolean to render list group items edge-to-edge in a parent container
-//   flush: PropTypes.bool,
-//   // boolean to render list group items horizontal. string for specific breakpoint, or true to be always horizontal
-//   horizontal: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-//   className: PropTypes.string,
-//   cssModule: PropTypes.object,
-// }
 
 // Fill Board List
 const BoardList = ({ board }) => {
@@ -170,8 +160,8 @@ class App extends Component {
                 <img src={logo} className="App-logo" alt="logo" />
               </header>
             </Col>
-            <Col>
-              <p className="App-name" style={{ fontSize: '30pt' }}><strong>To-Do List App</strong></p>
+            <Col xs={6} md={6}>
+              <p className="App-name" style={{ fontSize: '28pt', margin: '20pt' }}><strong>To-Do List App</strong></p>
               &nbsp;&nbsp;
               {isLoading && <div className='App-loading'><Spinner color="primary" /></div>}
             </Col>
@@ -188,18 +178,23 @@ class App extends Component {
                     <Input addon type="checkbox" aria-label="Checkbox for following text input" />
                   </InputGroupText>
                 </InputGroupAddon>
-                <Input placeholder="Check it out" />
+
+                <Input placeholder="Your new board name..." id="boardName" type="text" name="boardName" />
+
+                <InputGroupAddon addonType="append">
+                  <Button color="primary" onClick={this.boardCreate('test', 'public')} >Create</Button>
+                </InputGroupAddon>
               </InputGroup>
 
               <br></br>
 
-              <Form inline>
+              {/* <Form inline>
                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                   <Label for="boardName" className="mr-sm-2">Board Name</Label>
                   <Input type="text" name="boardName" id="boardName" placeholder="my board"/>
                 </FormGroup>
                 <Button color='primary' onClick={this.boardCreate()}>Submit</Button>
-              </Form>
+              </Form> */}
 
             </Col>
           </Row>
@@ -214,7 +209,7 @@ class App extends Component {
 
         {/* Boards List */}
         <ListGroup className='list' style={{ margin: '10pt' }}>
-          { boards.map((board) => (<BoardList board={board} ></BoardList>) ) }
+          { boards.map((board) => (<BoardList board={board} key={board._id}></BoardList>) ) }
         </ListGroup>
 
       </div>
